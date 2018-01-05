@@ -1,0 +1,18 @@
+<nav class="navbar navbar-default navbar-fixed">
+    <div class="admin-navnar" id="navbarText">
+            <ul>
+              <li>
+                <a  routerLink="/admin/dashboard"><i class="fa fa-user" aria-hidden="true"></i> Admin</a>
+              </li>
+              <li class="pull-right" *ngIf="auth.isAuthenticated()">
+                  <a href="#" 
+                      (click)="auth.logout()"
+                  > 
+                  <i class="fa fa-sign-out" aria-hidden="true"></i>
+                  Log out</a>
+          </li>
+            </ul>
+            
+          </div>
+         
+</nav>

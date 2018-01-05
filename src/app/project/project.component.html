@@ -1,0 +1,55 @@
+
+<div class="button-group filter-button-group">
+  <a class="categeory-link" [routerLink]="['/projects']" [routerLinkActive]="['is-active']">Show all</a>
+  <a class="categeory-link" [routerLink]="['/categeory/angular']" [routerLinkActive]="['is-active']" >Angular</a>
+  <a class="categeory-link" [routerLink]="['/categeory/express']" [routerLinkActive]="['is-active']" >Express</a>
+  <a class="categeory-link" [routerLink]="['/categeory/firebae']" [routerLinkActive]="['is-active']" >Angular &amp; Firebase</a>
+  <a class="categeory-link" [routerLink]="['/categeory/bootsrap']" [routerLinkActive]="['is-active']" >Bootsrap</a>
+  <a class="categeory-link" [routerLink]="['/categeory/mean']" [routerLinkActive]="['is-active']" >Mean</a>
+  <a class="categeory-link" [routerLink]="['/categeory/wordpress']" [routerLinkActive]="['is-active']">Wordpress</a>
+  <a class="categeory-link" [routerLink]="['/categeory/hubspot']" [routerLinkActive]="['is-active']">Hubspot</a>
+  <a class="categeory-link" [routerLink]="['/categeory/magento']" [routerLinkActive]="['is-active']">Magento</a>
+  <a class="categeory-link" [routerLink]="['/categeory/php']" [routerLinkActive]="['is-active']" >Php</a>
+  <a class="categeory-link" [routerLink]="['/categeory/misc...']" [routerLinkActive]="['is-active']" >Misc...</a>
+</div>
+
+<div class="project-list" [hidden]="projects.length > 0">
+    <h3><i class="fa fa-trash-o" aria-hidden="true"></i><p>No Projects Yet</p></h3>
+  </div>
+  <div class="grid">
+    <div *ngFor="let project of projects" [hidden]="filterMode">
+          <div class="protfolio-item">
+            <img class="card-img-top" src="{{'http://karan.nirnayepolytechnic.com/FileUpload/uploads/'+project.image}}" [alt]="project.name">
+            <p class="cat-link">{{project.categeory}}</p>
+            <h3 class="p-title">{{project.name}}</h3> 
+            <a [href]="project.link" class="p-link" target="_blank" ><i class="fa fa-link" aria-hidden="true"></i>
+            <div class="project-desc">
+              {{project.desc}}
+            </div>
+            </a>
+           </div>  
+        
+      </div>
+      <div *ngFor="let project of filterProject" [hidden]="!filterMode">
+          <div class="protfolio-item">
+            <img class="card-img-top" src="{{'http://karan.nirnayepolytechnic.com/FileUpload/uploads/'+project.image}}" [alt]="project.name">
+            <p class="cat-link">{{project.categeory}}</p>
+            <h3 class="p-title">{{project.name}}</h3> 
+            <a [href]="project.link" class="p-link" target="_blank" ><i class="fa fa-link" aria-hidden="true"></i>
+            <div class="project-desc">
+              {{project.desc}}
+            </div>
+            </a>
+           </div>  
+        
+      </div>
+      
+  </div>
+
+  
+  <div class="clearfix"></div>
+  
+  
+  
+
+  

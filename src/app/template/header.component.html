@@ -1,0 +1,42 @@
+<header>
+<nav>
+    <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/projects" >Projects</a></li>
+        
+        <li class="last" *ngIf="!auth.isAuthenticated()">
+            <a  href="#" 
+                 
+                (click)="auth.login()"
+            > 
+            <i class="fa fa-user" aria-hidden="true"></i> Admin</a>
+        </li>
+        <li *ngIf="auth.isAuthenticated()"><a routerLink="/admin/dashboard"> <i class="fa fa-user" aria-hidden="true"></i> Admin</a></li>
+        <li class="last" *ngIf="auth.isAuthenticated()">
+                <a href="#" 
+                    (click)="auth.logout()"
+                > 
+                <i class="fa fa-sign-out" aria-hidden="true"></i>
+                Log out</a>
+        </li>
+        
+        <li class="last"><a routerLink="/code-libary"   > <i class="fa fa-code" aria-hidden="true"></i> Code Libary</a></li>
+        
+        
+        
+        
+    </ul>
+    
+
+    
+</nav>   
+<div class="header-title">
+    <a routerLink="/">
+    <i>{{subtitle}}</i>
+    <h1>{{title}}</h1>
+    </a>
+</div>
+</header>
+
+
+
